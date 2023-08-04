@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aniversariantes da GEREX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/pt-br.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #calendar {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #translateButton {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="calendarTitle">🎂Aniversariantes da GEREX🎂</h1>
+    
+    <div id="calendar"></div>
+    <script>
+        moment.locale('pt-br');
+
+        const aniversariantes = [
+            { title: "Juliana 🎉", start: "2023-08-13" },
+            { title: "Leonardo 🎉", start: "2023-08-15" },
+            { title: "Diego 🎉", start: "2023-09-01" },
+            { title: "Gilmar 🎉", start: "2023-09-01" },
+            { title: "Natan 🎉", start: "2023-10-19" },
+            { title: "Erich 🎉", start: "2023-10-31" },
+            { title: "Guilherme 🎉", start: "2023-11-07" },
+            { title: "Julia 🎉", start: "2023-11-07" },
+            { title: "Silvana 🎉", start: "2023-11-10" },
+            { title: "Kimberly 🎉", start: "2023-11-14" },
+        ];
+
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: false,
+                eventLimit: true,
+                events: aniversariantes,
+                locale: 'pt-br'
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
